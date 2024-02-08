@@ -19,7 +19,7 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
 
         {/* 기타 데이터 출력 */}
         <div className="modal-buttons">
-          <button className="modal-content-but" onClick={handleApply}>
+          <button className="modal-content-but" onClick={()=>handleApply(data)}>
             신청
           </button>
           <button className="modal-content-but" onClick={handleClose}>

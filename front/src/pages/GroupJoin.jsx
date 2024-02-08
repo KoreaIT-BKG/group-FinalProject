@@ -90,7 +90,6 @@ const GroupJoin = () => {
       <GroupList print={print} searchValue={searchValue}/>
       {/* End Main */}
       {/* Footer */}
-      {userInfo.role}
       <Footer />
       {/* End footer */}
     </>

@@ -6,11 +6,7 @@ const Site = ({ print }) => {
   const [prints, setPrints] = useState("");
 
   const fetchSites = async () => {
-    // print 매개변수 삭제
-    console.log("이거 실행하니?!");
     try {
-      console.log("이거 실행하니?2");  
-
       const response = await axios.post("/groupjoin/siteCSearch", prints);
       if (response.data && Array.isArray(response.data)) {
         setSites(response.data); // setSites로 상태 업데이트
@@ -20,7 +16,7 @@ const Site = ({ print }) => {
     }
   };
   useEffect(() => {
-    if (Array.isArray(print)) {
+    if (Array.isArray(print)) {   
       const category = print.find((item) => typeof item === "object" && item.category);
       if (category) {
         setPrints(category.category);

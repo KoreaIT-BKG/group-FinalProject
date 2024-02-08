@@ -7,8 +7,7 @@ import ItGroup from "../../JS/CategoryList/It";
 import WorkGroup from "../../JS/CategoryList/work";
 
 
-const GroupList = ({ print,searchValue }) => {
-
+const GroupList = ({ print,searchValue}) => {
 if ((Array.isArray(print) && print.some((c) => c.category === "sport")) || print === "sport") {
     return <SportGroup print={print} searchValue={searchValue}/>;
   } else if ((Array.isArray(print) && print.some((c) => c.category === "life")) || print === "life") {

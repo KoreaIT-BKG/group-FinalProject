@@ -46,6 +46,16 @@
   .category > div:last-child {
     margin-right: 0; /* 마지막 div에는 우측 마진을 적용하지 않음 */
   }
+  .selected {
+    background-color: orange; /* 선택된 그룹에 대한 배경색 변경 */
+    color: white; /* 텍스트 색상 변경 */
+  }
+  .category-div.selected {
+    background-color: #ffcc00; /* 선택된 카테고리의 배경색을 변경 */
+    color: #ffffff; /* 텍스트 색상을 변경 */
+    font-weight: bold; /* 폰트 굵기를 변경 */
+    /* 필요한 다른 스타일을 추가할 수 있습니다 */
+  }
   
   /* 미디어 쿼리를 사용하여 화면 크기에 따라 스타일을 조절 */
   @media (max-width: 768px) {

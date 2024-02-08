@@ -14,12 +14,13 @@ import LoginContextProvider, {
 import AdminPage from "./pages/admin";
 import Header from "./components/Header/header";
 import Footer from "./components/Home/Footer";
-
+import PaymentComponent from "./components/GroupJoin/PaymentComponent";
 
 export default function App() {
   const { userInfo } = useContext(LoginContext);
   return (
     <Routes>
+      
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/test" element={<Test />} />
       <Route path="/insert" element={<InsertForm />} />
@@ -31,10 +32,12 @@ export default function App() {
       <Route path="/GroupJoin//:hselected" element={<GroupJoin />} />
       <Route path="/GroupJoin/:hsearch/:hselected" element={<GroupJoin />} />
       <Route path="/schedule" element={<Calendar />} />
-      {userInfo && userInfo.role === "ROLE_ADMIN" ? (
-        <Route path="/admin" element={<AdminPage />} />
-      ) : (
+      <Route path="/payment" element={<PaymentComponent/>} />
+
+      {!userInfo || (userInfo && userInfo.role !== "ROLE_ADMIN") ? (
         <Route path="/admin" element={<Navigate to="/" replace />} />
+      ) : (
+        <Route path="/admin" element={<AdminPage />} />
       )}
     </Routes>
   );

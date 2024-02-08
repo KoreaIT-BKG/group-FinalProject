@@ -22,7 +22,8 @@ const SportGroup = ({ print, searchValue }) => {
     setSelectedData(null);
     setIsModalOpen(false);
   };
-  const handleApply = async () => {
+  const handleApply = async (data) => {
+    if(data.meetingType==="무료"){ 
     try {
 
       const response = await axios.post("/api/content", selectedData,{
@@ -47,8 +48,28 @@ const SportGroup = ({ print, searchValue }) => {
     setIsModalOpen(false);
 
     window.location.reload();
+  }else if(data.meetingType==="유료"){
+    console.log("여기도 들어왔지?")
+    try {
+      const response = await axios.post("/api/content", selectedData,{
+        params:{
+        seq:userInfo.seq
+      }} );
+      console.log(response)
 
+
+      if(response.data === "기간"){
+        alert("모집기간이 지났습니다");
+      }else if(response.data === "인원"){
+        alert("모집인원이 다 찼습니다")
+      }else if(response.data === "신청"){
+        window.location.assign('/payment');
+      }
+    } catch (error) {
+    
+    }
   }
+}
   const getImageByCategory = (category) => {
     const images = list[category] || [];
     const randomIndex = Math.floor(Math.random() * images.length);

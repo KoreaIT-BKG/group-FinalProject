@@ -6,8 +6,12 @@ import java.util.Date;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import com.web.dto.MemberDTO;
+import com.web.service.MemberService;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.SecretJwk;
@@ -15,6 +19,7 @@ import io.jsonwebtoken.security.SecretJwk;
 @Component
 public class JWTUtil {
 
+	
 	private SecretKey secretKey;
 
 	public JWTUtil(@Value("${spring.jwt.secret}") String secret) {
@@ -56,7 +61,7 @@ public class JWTUtil {
 }
 
 
-
+ 
 
 
 

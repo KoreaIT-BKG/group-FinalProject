@@ -10,8 +10,10 @@ const LoginContextProvider = ({ children }) => {
     const [isLogin, setLogin] = useState(false);
     const [userInfo, setUserInfo] = useState("");
     const navigate = useNavigate();
+
     // 토큰 만료 여부를 확인하는 함수
     const isTokenExpired = (token) => {
+      if (!token) return true;
       const expirationDate = jwtDecode(token).exp;
       const currentTimestamp = Math.floor(new Date().getTime() / 1000);
       return expirationDate < currentTimestamp;
@@ -22,6 +24,7 @@ const LoginContextProvider = ({ children }) => {
   
     useEffect(() => {
       // 최초 실행
+      
       const checkTokenExpiration = async () => {
         const token = localStorage.getItem("accessToken");
   
@@ -35,6 +38,8 @@ const LoginContextProvider = ({ children }) => {
             localStorage.removeItem("accessToken");
             setUserInfo(null);
             alert("로그아웃 되었습니다");
+            navigate("/");
+            return; // 로그아웃 후 더 이상 진행하지 않음
   
           } else {
             try {
@@ -44,10 +49,7 @@ const LoginContextProvider = ({ children }) => {
                 },
               });
               setUserInfo(response.data || null);
-              console.log(response.data.role);
-              console.log(response.data.seq);
               setUserInfo(response.data);
-              console.log("왜 여기가 아노디?");
             } catch (error) {
               console.error("Error fetching data:", error);
             }
@@ -64,11 +66,12 @@ const LoginContextProvider = ({ children }) => {
       return () => {
         clearInterval(interval); // 컴포넌트 언마운트 시 interval 해제
       };
-    }, [setLogin, setUserInfo]);
+    }, []);
   
   const logout = () => {
     setLogin(false);
     localStorage.removeItem("accessToken");
+    alert('로그아웃 되었습니다')
     navigate("/")
   };
 

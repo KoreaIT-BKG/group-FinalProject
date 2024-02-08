@@ -43,6 +43,11 @@ public class MemberService {
         member.setRole("ROLE_USER");
         return rep.save(member);
     }
+    public void roleMemberSave(MemberDTO dto) {
+    	dto.setRole("ROLE_MUSER");
+    	
+    	rep.save(dto);
+    }
     
     public boolean checkId(String id) { return rep.existsById(id); }
 
