@@ -71,6 +71,7 @@ const AdminPage = () => {
     try {
       const response = await axios.post("/admin/memberSearch");
       if (response.data && Array.isArray(response.data)) {
+        console.log(response.data)
         setMembers(response.data);
       }
     } catch (error) {
@@ -90,12 +91,12 @@ const AdminPage = () => {
   };
   const handleRoleChange = (seq, event) => {
     const newRole = event.target.value;
-    setEditedMember({ seq, role: newRole, point: editedMember?.point || "" });
+    setEditedMember({ seq, role: newRole, evp: editedMember?.evp || "" });
   };
 
   const handlePointChange = (seq, event) => {
     const newPoint = event.target.value;
-    setEditedMember({ seq, role: editedMember?.role || "", point: newPoint });
+    setEditedMember({ seq, role: editedMember?.role || "", evp: newPoint });
   };
 
   const handleEdit = (member) => {
@@ -106,9 +107,9 @@ const AdminPage = () => {
     if (!editedMember) return;
 
     try {
-      const { seq, role, point } = editedMember;
+      const { seq, role, evp } = editedMember;
       await axios.post("/admin/updateRole", { seq, role });
-      await axios.post("/admin/updatePoint", { seq, point });
+      await axios.post("/admin/updatePoint", { seq, evp });
       alert("수정 완료");
       fetchMembers();
       setEditedMember(null);
@@ -233,11 +234,11 @@ const AdminPage = () => {
                       <input
                         className="right-table-input"
                         type="text"
-                        value={editedMember.point}
+                        value={editedMember.evp}
                         onChange={(e) => handlePointChange(member.seq, e)}
                       />
                     ) : (
-                      member.point
+                      member.evp
                     )}
                   </td>
                   <td>

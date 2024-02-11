@@ -46,6 +46,8 @@ public class MemberDTO {
 	private int count;
 	@Column(name = "point")
 	private int point;
+	@Column(name = "evp")
+	private Integer evp;
 	@Column(name = "role")
 	private String role;
 	

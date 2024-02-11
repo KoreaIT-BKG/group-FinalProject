@@ -12,9 +12,9 @@ import LoginContextProvider, {
   LoginContext,
 } from "./contexts/LoginContextProvider";
 import AdminPage from "./pages/admin";
-import Header from "./components/Header/header";
-import Footer from "./components/Home/Footer";
+
 import PaymentComponent from "./components/GroupJoin/PaymentComponent";
+import Review from "./pages/review";
 
 export default function App() {
   const { userInfo } = useContext(LoginContext);
@@ -33,7 +33,7 @@ export default function App() {
       <Route path="/GroupJoin/:hsearch/:hselected" element={<GroupJoin />} />
       <Route path="/schedule" element={<Calendar />} />
       <Route path="/payment" element={<PaymentComponent/>} />
-
+      <Route path="/review" element={<Review/>}/>
       {!userInfo || (userInfo && userInfo.role !== "ROLE_ADMIN") ? (
         <Route path="/admin" element={<Navigate to="/" replace />} />
       ) : (

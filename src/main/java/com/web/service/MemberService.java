@@ -69,7 +69,9 @@ public class MemberService {
     }
     public void pointSeq(MemberDTO dto) {
     	MemberDTO dtos = rep.findById(dto.getSeq()).get();
-    	dtos.setPoint(dto.getPoint());
+    	dtos.setEvp(dto.getEvp());
+    	dtos.setCount(1);
+    	dtos.setPoint(dto.getEvp());
     	System.out.println(dtos);
     	rep.save(dtos);
 

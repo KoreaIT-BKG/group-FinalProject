@@ -50,6 +50,7 @@ const GroupJoin = () => {
           groupValue, categoryValue, searchValue, selectedValue
         });
         // 데이터 출력
+        console.log(response.data)
         if(response.data.length === 0){
           setPrint(categoryValue || selectedValue);
         }else{

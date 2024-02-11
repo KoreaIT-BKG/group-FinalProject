@@ -48,7 +48,7 @@ public class GroupListController {
 	// 그룹 참가하기 페이지에 그룹 출력
 	@PostMapping("/api/test")
 	public List<GroupInfo> test2(@RequestBody GroupListDTO2 dto2) {
-
+		
 		if (dto2.getGroupValue() == null) {
 			dto2.setGroupValue("무료");
 		}
@@ -63,6 +63,7 @@ public class GroupListController {
 	// 그룹 신청
 	@PostMapping("/api/content")
 	public String test(@RequestBody GroupInfo dao, @RequestParam(name="seq") Long seq) {
+		System.out.println("여기 머야");
 		System.out.println(dao.getSeq());
 		System.out.println(seq);
 		String id = InfoService.findUserById(seq);
@@ -72,7 +73,6 @@ public class GroupListController {
 			return "인원";
 		}
 		try {
-
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			LocalDate recruitmentDate = LocalDate.parse(dao.getRecruitmentd(), formatter);
 			if (today.isAfter(recruitmentDate)) {

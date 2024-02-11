@@ -57,6 +57,7 @@ public class AdminController {
 	// 관리자페이지에서 회원 권한 수정
 	@PostMapping("/admin/updateRole")
 	public void updateRole(@RequestBody MemberDTO dto) {
+		System.out.println("확인해줘");
 		System.out.println(dto);
 		ms.roleSeq(dto);
 	}
@@ -64,6 +65,7 @@ public class AdminController {
 	// 관리자 페이지에서 회원 포인트 수정
 	@PostMapping("/admin/updatePoint")
 	public void updatePoint(@RequestBody MemberDTO dto) {
+		System.out.println("실해앟자");
 		System.out.println(dto);
 		ms.pointSeq(dto);
 
