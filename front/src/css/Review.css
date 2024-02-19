@@ -1,16 +1,19 @@
 /* Review.css */
 .review-container {
+  min-height: 74vh; /* 최소 세로 높이를 화면의 80%로 설정 */
+  width: 100%; /* 가로 폭을 100%로 설정 */
+  margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
+  padding: 20px; /* 내용과의 여백을 설정, 필요에 따라 조절 가능 */
   max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+
 }
 
 
 
 .reviews-div {
   margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+
+
   padding: 20px;
 }
 

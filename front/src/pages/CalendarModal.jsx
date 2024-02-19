@@ -273,7 +273,6 @@ class CalendarModal extends React.Component {
                   eventData={eventData}
                   displayColorPicker={this.state.displayColorPicker}
                   handleColorPickerOpen={this.handleColorPickerOpen}
-                  // handleColorChange={this.handleColorChange}
                   handleColorPickerConfirm={this.handleColorPickerConfirm}
                   handleColorPickerClose={this.handleColorPickerClose}
                 />                                                                                                                                                  

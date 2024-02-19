@@ -123,7 +123,7 @@ const SportGroup = ({ print, searchValue }) => {
                 <h4 className="group-item-h4">{c.category}</h4>
                 <h4 className="group-item-h4">{c.meetingTitle}</h4>
                 <h4 className="group-item-h4-end">
-                  {new Date(c.recruitmentd) < new Date() - 24 * 60 * 60 * 1000
+                {new Date(c.recruitmentd) < new Date() - 24 * 60 * 60 * 1000 || c.peopleNum === c.joinPeople
                     ? "모집종료"
                     : null}
                 </h4>

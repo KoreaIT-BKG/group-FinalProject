@@ -7,6 +7,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import "../css/Calendar.css";
 import Header from "../components/Header/header";
+import Footer from "../components/Home/Footer";
 import CalendarModal from "./CalendarModal";
 import "../css/CalendarModal.css";
 import axios from "axios";
@@ -109,6 +110,7 @@ class Calendar extends Component {
         },
       },
       () => {
+
         console.log("Selected Event Data:", this.state.selectedEventData);
       }
     );
@@ -124,13 +126,13 @@ class Calendar extends Component {
 
     await this.fetchEvents();
   };
-  handleEventRender = (info) => {
-    // info.el은 이벤트를 렌더링하는 HTML 엘리먼트입니다.
-    // info.event는 풀캘린더 이벤트 객체입니다.
+  // handleEventRender = (info) => {
+  //   // info.el은 이벤트를 렌더링하는 HTML 엘리먼트입니다.
+  //   // info.event는 풀캘린더 이벤트 객체입니다.
 
-    // 선택한 색상을 배경색으로 적용
-    info.el.style.backgroundColor = info.event.extendedProps.color;
-  };
+  //   // 선택한 색상을 배경색으로 적용
+  //   info.el.style.backgroundColor = info.event.extendedProps.color;
+  // };
 
   checkTokenExpiration = async () => {
     const token = localStorage.getItem("accessToken");
@@ -204,12 +206,7 @@ class Calendar extends Component {
         membersId: event.membersId,
         searchLocation: event.searchLocation,
       }));
-      // formatEvents.forEach(event => {
-      //   const adjustedEndDate = new Date(event.end)
-      //   adjustedEndDate.setDate(adjustedEndDate.getDate() + 1)
-      //   event.end = adjustedEndDate.toISOString().split('T')[0]; // 시간 정보 제외
 
-      // })
       this.setState({ joinInfo: formatEvents });
       console.log("내 가입현황 ", this.state.joinInfo);
     } catch (error) {
@@ -246,12 +243,7 @@ class Calendar extends Component {
         membersId: event.membersId,
         searchLocation: event.searchLocation,
       }));
-      // formatEvents.forEach(event => {
-      //   const adjustedEndDate = new Date(event.end)
-      //   adjustedEndDate.setDate(adjustedEndDate.getDate() + 1)
-      //   event.end = adjustedEndDate.toISOString().split('T')[0]; // 시간 정보 제외
 
-      // })
       this.setState({ groupInfo: formatEvents });
       console.log("내 신청현황 ", this.state.groupInfo);
     } catch (error) {
@@ -264,7 +256,6 @@ class Calendar extends Component {
       console.log(seq);
       const response = await axios.post("/getEvents", { seq });
       const eventData = response.data;
-      // console.log("서버에서 넘어온 값", eventData)
 
       const formattedEvents = eventData.map((event) => ({
         title: event.scheduleTitle,
@@ -368,13 +359,11 @@ class Calendar extends Component {
               nextDayThreshold={"24:00:00"} // 마지막 날을 포함하도록 설정
               selectable={true} // 전체 캘린더를 선택 가능하게 만듬
               select={this.handleSelect} // 선택한 영역에 대한 콜백
-              eventRender={this.handleEventRender} // 이벤트 렌더링 시 호출되는 콜백
             />
           </div>
         </div>
         {this.state.showModal && (
           <CalendarModal
-            // date={this.state.modalDate}
             onClose={this.handleCloseModal}
             start={this.state.modalStartDate}
             end={this.state.modalEndDate}
@@ -389,6 +378,7 @@ class Calendar extends Component {
             onClose={() => this.setState({ details: null })}
           />
         )}
+        <Footer/>
       </div>
     );
   }

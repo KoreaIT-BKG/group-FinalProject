@@ -59,7 +59,7 @@ const SignUp = () => {
             console.log(user);
             console.log(response.data);
             alert("가입완료");
-            navigate('/');
+            navigate('/Login');
         } catch (error) {
             console.error('가입 실패:', error);
         }

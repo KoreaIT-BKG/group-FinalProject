@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Modal.css"
+import "../css/Modal.css";
 const Modal = ({ isOpen, handleClose, data, handleApply }) => {
   // 모달이 열려 있지 않으면 null 반환할꺼양
   if (!isOpen) {
@@ -9,18 +9,90 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         {/* 모달 내용 18줄까지 가능*/}
-        <h3>모집기간 : {data.recruitments} ~ {data.recruitmentd}</h3>
-        <h2>{data.meetingTitle}</h2>
-        <h3>모임방식 : {data.faceToFace}</h3>
-        {data.faceToFace === '비대면' ? <h3>공유프로그램 : {data.program}</h3> : null}
-        <h3>모임기간 : {data.meetingDateStart} ~ {data.meetingDateEnd}</h3>
-        <h3>모집인원 : {data.joinPeople}/{data.peopleNum}</h3>
-        <h3>모임장소 : {data.meetingLocation}</h3>
-        {data.meetingType === "유료" ? <h3>참기비용 : 5000원</h3> : null}
+        <table className="modal-table">
+          <tr className="modal-table-tr">
+            <td colSpan={2}>
+              <h2 className="modal-h2">{data.meetingTitle}</h2>
+            </td>
+          </tr>
+          <tr className="modal-table-tr">
+            <td>
+              <h3 className="modal-h3">모집기간 :</h3>
+            </td>
+            <td>
+              <h3 className="modal-h3">
+                {data.recruitments} ~ {data.recruitmentd}
+              </h3>
+            </td>
+          </tr>
+          <tr className="modal-table-tr">
+            <td>
+              <h3 className="modal-h3">모임방식 :</h3>
+            </td>
+            <td>
+              <h3 className="modal-h3"> {data.faceToFace}</h3>
+            </td>
+          </tr>
+          <tr className="modal-table-tr">
+            {data.faceToFace === "비대면" ? (
+              <>
+                <td>
+                  <h3 className="modal-h3">공유프로그램 : </h3>
+                </td>
+                <td>
+                  <h3 className="modal-h3">{data.program}</h3>
+                </td>
+              </>
+            ) : null}
+          </tr>
+          <tr className="modal-table-tr">
+            <td>
+              <h3 className="modal-h3">모임기간 :</h3>
+            </td>
+            <td>
+              <h3 className="modal-h3">
+                {data.meetingDateStart} ~ {data.meetingDateEnd}
+              </h3>
+            </td>
+          </tr>
+          <tr className="modal-table-tr">
+            <td>
+              <h3 className="modal-h3">모집인원 :</h3>
+            </td>
+            <td>
+              <h3 className="modal-h3">
+                {data.joinPeople}/{data.peopleNum}
+              </h3>
+            </td>
+          </tr>
+          <tr className="modal-table-tr">
+            <td>
+              <h3 className="modal-h3">모임장소 : </h3>
+            </td>
+            <td>
+              <h3 className="modal-h3">{data.meetingLocation}</h3>
+            </td>
+          </tr>
+          <tr className="modal-table-tr">
+            {data.meetingType === "유료" ? (
+              <>
+                <td>
+                  <h3 className="modal-h3">참기비용 : </h3>
+                </td>
+                <td>
+                  <h3 className="modal-h3"> 5000원</h3>
+                </td>
+              </>
+            ) : null}
+          </tr>
+        </table>
 
         {/* 기타 데이터 출력 */}
         <div className="modal-buttons">
-          <button className="modal-content-but" onClick={()=>handleApply(data)}>
+          <button
+            className="modal-content-but"
+            onClick={() => handleApply(data)}
+          >
             신청
           </button>
           <button className="modal-content-but" onClick={handleClose}>

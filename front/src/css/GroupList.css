@@ -5,7 +5,11 @@
   align-items: center;
   margin: 20px auto;
   width: 80%;
+  height: 80%;
+  min-width: 70vw; /* 변경된 부분 */
+  min-height: 70vh; /* 변경된 부분 */
 }
+
 
 .group-item {
   width: 100%;

@@ -52,6 +52,7 @@ public class ReviewService {
 					if (currentDate.isAfter(meetingDateEnd)) {
 						list2.add(groupInfoView);
 					}
+				
 				} catch (ParseException e) {
 					// 파싱에 실패한 경우 예외 처리를 수행합니다.
 					e.printStackTrace(); // 또는 다른 처리 방법을 선택할 수 있습니다.
@@ -64,11 +65,18 @@ public class ReviewService {
 		        GroupInfoView groupInfoView = iterator.next();
 		        for (Review review : list3) {
 		            if (groupInfoView.getMeetingTitle().equals(review.getMeetingTitle()) && groupInfoView.getMembersId().equals(review.getId())) {
-		                iterator.remove(); // 일치하는 경우 제거
+		            	iterator.remove(); // 일치하는 경우 제거
 		            }
 		        }
 		    }
 
+		 Iterator<GroupInfoView> iterator = list2.iterator();
+		 while (iterator.hasNext()) {
+		     GroupInfoView groupInfoView = iterator.next();
+		     if (groupInfoView.getMembersId().equals(groupInfoView.getUserId())) {
+		         iterator.remove(); // 안전하게 요소 제거
+		     }
+		 }
 
 		return list2;
 

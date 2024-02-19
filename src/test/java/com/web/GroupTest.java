@@ -6,7 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 
 import com.web.dto.GroupInfo;
+import com.web.dto.GroupInfoView;
 import com.web.dto.MemberDTO;
+import com.web.persistence.GroupInfoViewRepository;
 import com.web.persistence.GroupListRepository;
 import com.web.persistence.MemberRepository;
 import com.web.service.GroupInfoService;
@@ -20,6 +22,8 @@ public class GroupTest {
 	@Autowired
 	private GroupInfoService Inforepo;
 	@Autowired
+	private GroupInfoViewRepository gvrepo;
+	@Autowired
 	private MemberRepository Memrepo;
 	
 	@Autowired
@@ -28,23 +32,24 @@ public class GroupTest {
 	@Test
 	public void add() {
 		try {
-			GroupInfo groupinfo = new GroupInfo();
-			groupinfo.setCategory("sport");
+			GroupInfoView groupinfo = new GroupInfoView();
+			groupinfo.setUserId("tmfrl1");
+			groupinfo.setMeetingTitle("공부나해볼까요?");
+			groupinfo.setCategory("work");
 			groupinfo.setFaceToFace("대면");
-			groupinfo.setMeetingTitle("운동합시다");
-			groupinfo.setJoinPeople(3);
-			groupinfo.setMeetingCost(0);
-			groupinfo.setMeetingDateStart("2024-01-01");
-			groupinfo.setMeetingDateEnd("2024-01-21");
-			groupinfo.setRecruitments("2023-12-29");
-			groupinfo.setRecruitmentd("2023-12-30");
-			groupinfo.setMeetingLocation("관악구우리집");
-			groupinfo.setMeetingType("무료");
-			groupinfo.setPeopleNum(3);
 			groupinfo.setProgram("x");
-			groupinfo.setUserId("강남아파트");
+			groupinfo.setMeetingType("무료");
+			groupinfo.setPeopleNum(5);
+			groupinfo.setJoinPeople(5);
+			groupinfo.setMeetingCost(0);
+			groupinfo.setRecruitments("2024-02-01");
+			groupinfo.setRecruitmentd("2024-02-02");
+			groupinfo.setMeetingDateStart("2024-02-03");
+			groupinfo.setMeetingDateEnd("2024-02-04");
+			groupinfo.setMeetingLocation("서울시 강남구");
+			groupinfo.setMembersId("jkuilo153");
 			String str = "우리집 강아지";
-			Inforepo.insertGroup(groupinfo, str);
+			gvrepo.save(groupinfo);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

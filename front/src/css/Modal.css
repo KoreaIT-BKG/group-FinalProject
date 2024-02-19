@@ -1,47 +1,74 @@
-/* 모달 내용 */
+/* 모달 오버레이 */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* 반투명한 검은 배경 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 70%;
-    max-height: 70%;
-    width: 100%;
-    text-align: center;
-  }
-  
-/* 닫기 버튼 스타일 (선택사항) */
-.modal-buttons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명한 배경 */
   display: flex;
-  gap: 1rem; /* 원하는 간격 설정 */
-  justify-content: center; /* 수평 중앙 정렬 */
-  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center;
+  align-items: center;
 }
 
+/* 모달 컨텐츠 */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+  max-width: 600px; /* 최대 너비 */
+  width: 90%; /* 화면 너비의 90%만 사용 */
+}
+
+/* 모달 테이블 */
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* 모달 테이블 행 */
+.modal-table-tr {
+  border-bottom: 1px solid #ddd; /* 행 간 구분선 */
+}
+
+/* 모달 테이블 셀 */
+.modal-table td {
+  padding: 10px;
+}
+
+/* 모달 버튼 그룹 */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* 모달 버튼 */
 .modal-content-but {
-    padding: 10px 20px;
-    background: #007bff;
-    width: 100px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;   
-    display: block;
-  }
-  
-  /* 닫기 버튼 호버 효과 (선택사항) */
-  .modal-content-but:hover {
-    background: #0056b3;
-  }
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* 파란색 버튼 */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* 배경색 전환 애니메이션 */
+}
+
+/* 모달 버튼 호버 상태 */
+.modal-content-but:hover {
+  background-color: #0056b3; /* 호버 시 밝은 파란색 */
+}
+
+/* 모달 제목 */
+.modal-h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* 모달 내용 */
+.modal-h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}

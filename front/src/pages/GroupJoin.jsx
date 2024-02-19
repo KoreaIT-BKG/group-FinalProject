@@ -37,7 +37,7 @@ const GroupJoin = () => {
       setCategoryValue('sport')
     }
     setIsSelectOpen(true); // 검색 시 Select 컴포넌트 열기
-    
+
   };
 
 
@@ -82,8 +82,8 @@ const GroupJoin = () => {
       <Header />
       {/* End header */}
       {/* Main */}
-      <ImageSlide />
-      {/* onSearch 함수를 Select 컴포넌트로 전달 */}
+    {/* onSearch 함수를 Select 컴포넌트로 전달 */}
+  
       <Select onSearch={handleSearch} />
       <div style={{ marginTop: "40px" }} />
       {/* search와 selected 값을 GroupCategory로 전달 */}
@@ -91,6 +91,7 @@ const GroupJoin = () => {
       <GroupList print={print} searchValue={searchValue}/>
       {/* End Main */}
       {/* Footer */}
+
       <Footer />
       {/* End footer */}
     </>
