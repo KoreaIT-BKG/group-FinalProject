@@ -5,7 +5,7 @@
   margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
   padding: 20px; /* 내용과의 여백을 설정, 필요에 따라 조절 가능 */
   max-width: 800px;
-
+  font-family: 'TheJamsil5Bold';
 }
 
 

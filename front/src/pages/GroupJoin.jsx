@@ -87,7 +87,7 @@ const GroupJoin = () => {
       <Select onSearch={handleSearch} />
       <div style={{ marginTop: "40px" }} />
       {/* search와 selected 값을 GroupCategory로 전달 */}
-      <GroupCategory onSearch={handleSearch}/>
+      <GroupCategory category={category} onSearch={handleSearch}/>
       <GroupList print={print} searchValue={searchValue}/>
       {/* End Main */}
       {/* Footer */}

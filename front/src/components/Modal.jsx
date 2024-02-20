@@ -17,7 +17,7 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
           </tr>
           <tr className="modal-table-tr">
             <td>
-              <h3 className="modal-h3">모집기간 :</h3>
+              <h3 className="modal-h31">모집기간 :</h3>
             </td>
             <td>
               <h3 className="modal-h3">
@@ -27,7 +27,7 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
           </tr>
           <tr className="modal-table-tr">
             <td>
-              <h3 className="modal-h3">모임방식 :</h3>
+              <h3 className="modal-h31">모임방식 :</h3>
             </td>
             <td>
               <h3 className="modal-h3"> {data.faceToFace}</h3>
@@ -37,7 +37,7 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
             {data.faceToFace === "비대면" ? (
               <>
                 <td>
-                  <h3 className="modal-h3">공유프로그램 : </h3>
+                  <h3 className="modal-h31">공유프로그램 : </h3>
                 </td>
                 <td>
                   <h3 className="modal-h3">{data.program}</h3>
@@ -47,7 +47,7 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
           </tr>
           <tr className="modal-table-tr">
             <td>
-              <h3 className="modal-h3">모임기간 :</h3>
+              <h3 className="modal-h31">모임기간 :</h3>
             </td>
             <td>
               <h3 className="modal-h3">
@@ -57,7 +57,7 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
           </tr>
           <tr className="modal-table-tr">
             <td>
-              <h3 className="modal-h3">모집인원 :</h3>
+              <h3 className="modal-h31">모집인원 :</h3>
             </td>
             <td>
               <h3 className="modal-h3">
@@ -67,7 +67,7 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
           </tr>
           <tr className="modal-table-tr">
             <td>
-              <h3 className="modal-h3">모임장소 : </h3>
+              <h3 className="modal-h31">모임장소 : </h3>
             </td>
             <td>
               <h3 className="modal-h3">{data.meetingLocation}</h3>
@@ -77,7 +77,7 @@ const Modal = ({ isOpen, handleClose, data, handleApply }) => {
             {data.meetingType === "유료" ? (
               <>
                 <td>
-                  <h3 className="modal-h3">참기비용 : </h3>
+                  <h3 className="modal-h31">참기비용 : </h3>
                 </td>
                 <td>
                   <h3 className="modal-h3"> 5000원</h3>

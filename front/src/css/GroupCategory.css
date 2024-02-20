@@ -1,10 +1,17 @@
+/*
 @font-face {
     font-family: 'CookieRun-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
-  
+  */
+  @font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
   .Group {
     display: flex;
     justify-content: space-between;
@@ -19,10 +26,14 @@
     width: 20%;
     background-color: aqua;
     border-radius: 50px;
-    font-family: 'CookieRun-Regular';
+  /*  font-family: 'CookieRun-Regular';*/
+  font-family: 'TheJamsil5Bold';
+
+
   }
   
   .category {
+    font-family: 'TheJamsil5Bold';
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -40,7 +51,9 @@
     background-color: gray; /* 바탕색을 회색으로 설정 */
     border-radius: 50px;
     color: white;
-    font-family: 'CookieRun-Regular';
+   /* font-family: 'CookieRun-Regular';*/
+   font-family: 'TheJamsil5Bold';
+
   }
   
   .category > div:last-child {

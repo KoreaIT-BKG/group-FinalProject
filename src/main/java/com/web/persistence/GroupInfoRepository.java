@@ -8,14 +8,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.web.dto.GroupInfo;
-import com.web.dto.GroupInfoDAO;
 import com.web.dto.GroupInfoView;
 
 public interface GroupInfoRepository extends JpaRepository<GroupInfo, Long> {
 
 	GroupInfo findBySeq(Long seq);
 
-	void save(GroupInfoDAO dao);
 
 	List<GroupInfo> findAllByMeetingTitle(String meetingTitle);
 

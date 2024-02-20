@@ -1,12 +1,18 @@
 /* Select.css */
-
+/*
 @font-face {
     font-family: 'CookieRun-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
+*/
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 .Selected {
     display: flex;
     align-items: center;
@@ -14,9 +20,11 @@
     padding: 10px;
     border: 2px solid #3498db;
     border-radius: 5px;
-    font-family: 'CookieRun-Regular';
+  /*  font-family: 'CookieRun-Regular';*/
     background-color: #f8f9fa;
     width: 80%;
+    font-family: 'TheJamsil5Bold';
+
 }
 
 .Selected2 {
@@ -41,7 +49,7 @@
     border: none;
     height: 40px;
     font-size: 18px;
-    font-family: 'CookieRun-Regular';
+  /*  font-family: 'CookieRun-Regular';*/
     cursor: pointer;
 }
 

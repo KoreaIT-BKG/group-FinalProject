@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.web.dto.GroupInfo;
-import com.web.dto.GroupInfoDAO;
 import com.web.dto.MemberDTO;
 import com.web.dto.SiteDTO;
 import com.web.persistence.SiteRepository;

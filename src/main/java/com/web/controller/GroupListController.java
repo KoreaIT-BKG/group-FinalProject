@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.web.dto.GroupInfo;
-import com.web.dto.GroupInfoDAO;
 import com.web.dto.GroupInfoView;
 import com.web.dto.GroupListDTO2;
 import com.web.dto.MemberDTO;
@@ -106,13 +105,12 @@ public class GroupListController {
 	
 	@PostMapping("/groupjoin/siteCSearch")
 	public List<SiteDTO> siteCSearch(@RequestBody String category){
-		System.out.println("들어왔을까까까까?");
-		System.out.println(category);
-		System.out.println("들어왔을까까까까?");
+
 		category = category.replace("=", "");
     	System.out.println(category);
 		List<SiteDTO> list = new ArrayList<>();
 		list = Sservice.siteCSearch(category);
+		System.out.println(list);
 		return list;
 		
 	}

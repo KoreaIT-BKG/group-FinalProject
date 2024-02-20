@@ -1,17 +1,27 @@
 /* Header.styles.css */
+/*
 @font-face {
     font-family: 'CookieRun-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
+  */@font-face {
+    font-family: 'TAEBAEKfont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
 .header-container {
     background-color: skyblue;
     padding-right: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'CookieRun-Regular'; /*여기만 수정*/
+    /*font-family: 'CookieRun-Regular'; */
+    font-family: 'TAEBAEKfont';
+
 }
 
 .home-link {

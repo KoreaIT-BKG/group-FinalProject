@@ -3,6 +3,7 @@
 /* JoinForm.styles.css */
 .container{
   margin-top: 30px;
+  font-family: 'TheJamsil5Bold';
 }
 
 .tl{ /*h3*/
@@ -125,4 +126,31 @@ button:disabled {
 
 .modal-footer {
     text-align: right;
+}
+/* Button Styles */
+.submit,
+.checkId {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Display as inline-block */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    transition-duration: 0.4s; /* Transition duration */
+    cursor: pointer; /* Cursor pointer */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.submit:hover,
+.checkId:hover {
+    background-color: #45a049; /* Darker green background on hover */
+    color: white; /* White text on hover */
+}
+
+
+.br {
+  margin-bottom: 100px;
 }

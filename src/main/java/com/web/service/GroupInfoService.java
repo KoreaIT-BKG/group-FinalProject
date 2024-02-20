@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.web.dto.GroupInfo;
-import com.web.dto.GroupInfoDAO;
 import com.web.dto.GroupInfoView;
 import com.web.dto.MemberDTO;
 import com.web.persistence.GroupInfoRepository;
