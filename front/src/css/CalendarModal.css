@@ -22,6 +22,7 @@
   text-align: center;
   z-index: 1001; /* 상황에 맞게 조절 */
   width: 50%;
+
 }
 
 .modal-content h2 {

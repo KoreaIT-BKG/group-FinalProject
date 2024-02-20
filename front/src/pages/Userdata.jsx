@@ -110,7 +110,9 @@ const Userdata = () => {
             </tbody>
           </table>
         </form>
+        <br/>
                 <button className="submit" onClick={handleOpenModal}>수정하기</button>
+                <div className="br"></div>
         {/* 모달 */}
         {pwdModal && (
           <div className="modal" onClick={handleCloseModal}>

@@ -1,8 +1,10 @@
 
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-
-
+@font-face {
+  font-family: 'TheJamsil5Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
 
 .insert-form-container {
   display: flex;
@@ -10,21 +12,24 @@
   align-items: center;
   height: auto;
   margin-top: 20px;
+  font-family: 'TheJamsil5Bold';
 }
 
 .insert-form {
+
   max-width: 800px;
   width: 100%;
   padding: 40px;
   margin-top: 20px;
-  font-family: 'Noto Sans', sans-serif; /* 변경: Noto Sans 폰트 사용 */
+
 }
 
 .insertLabel {
+
   width: auto;
   margin-bottom: 10px;
   color: #333;
-  font-family: 'Noto Sans', sans-serif; /* 변경: Noto Sans 폰트 사용 */
+
 }
 
 .insertInput {

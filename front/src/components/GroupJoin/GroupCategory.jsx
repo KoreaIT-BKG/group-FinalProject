@@ -3,13 +3,13 @@ import { useState } from "react";
 import "../../css/GroupCategory.css";
 import GroupList from "./GroupList";
 
-const GroupCategory = ({ onSearch }) => {
-  const [group, setGroup] = useState("무료"); // group 값을 상태로 관리
-  const [selectedCategory, setSelectedCategory] = useState("sport"); // 선택된 카테고리를 상태로 관리
-
+const GroupCategory = ({ onSearch, category }) => {
+  const [group, setGroup] = useState('무료'); // group 값을 상태로 관리
+  const [selectedCategory, setSelectedCategory] = useState(category||'sport'); // 선택된 카테고리를 상태로 관리
+  
   const handleGroup = (selectedGroup) => {
     setGroup(selectedGroup); // 클릭된 그룹으로 상태 업데이트
-    setSelectedCategory("sport"); // 그룹이 변경될 때 선택된 카테고리 초기화
+    setSelectedCategory('sport'); // 그룹이 변경될 때 선택된 카테고리 초기화
     onSearch(null, null, null, selectedGroup);
   };
 

@@ -168,7 +168,7 @@ const EventDetailModal = ({ details, onClose }) => {
               신청 취소
             </button>
           )}
-          {details.userId === details.membersId  && (
+          {details.recruitmentd && details.recruitmentd >= today && details.userId === details.membersId && (
             <button
               type="button"
               className="btn btn-primary"

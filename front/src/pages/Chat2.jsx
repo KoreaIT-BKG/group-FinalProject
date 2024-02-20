@@ -10,15 +10,15 @@ import { ConnectingAirportsOutlined } from "@mui/icons-material";
 
 const Chat = () => {
     const { userInfo } = useContext(LoginContext);
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState("");
     const [message, setMessage] = useState("");
     const [chatt, setChatt] = useState([]);
     const [chkLog, setChkLog] = useState(false);
-    const [groupnum, setGroupnum] = useState(null);
-    const [title, setTitle] = useState(null);
+    const [groupnum, setGroupnum] = useState("");
+    const [title, setTitle] = useState("");
 
-    const ws = useRef(null);
-    const chatEndRef = useRef(null);
+    const ws = useRef("");
+    const chatEndRef = useRef("");
 
     useEffect(() => {
         const token = localStorage.getItem("accessToken");

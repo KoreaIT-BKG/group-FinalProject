@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.web.dto.GroupInfo;
-import com.web.dto.GroupInfoDAO;
 import com.web.dto.MemberDTO;
 import com.web.dto.SiteDTO;
 import com.web.persistence.SiteRepository;
@@ -101,7 +100,7 @@ public class AdminController {
 		if (!file.isEmpty()) {
 			try {
 				// 파일 저장 경로 설정 (원하는 경로로 수정 필요)
-				String uploadPath = "C:\\Users\\qkrwn\\git\\group-FinalProject\\front\\public\\Image\\site\\"+ file.getOriginalFilename();
+				String uploadPath = "C:\\Users\\dldbs\\git\\group-FinalProject\\front\\public\\Image\\site\\"+ file.getOriginalFilename();
 
 				// 파일을 저장할 경로 설정
 				String filePath = uploadPath;

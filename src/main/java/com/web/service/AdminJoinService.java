@@ -12,6 +12,7 @@ import com.web.dto.JoinDTO;
 import com.web.dto.MemberDTO;
 import com.web.dto.SiteDTO;
 import com.web.persistence.MemberRepository;
+import com.web.persistence.ReviewRepository;
 import com.web.persistence.SiteRepository;
 
 @Service
@@ -20,6 +21,9 @@ public class AdminJoinService {
 	@Autowired
 	private SiteRepository Srepo;
 
+	@Autowired
+	private ReviewRepository viewrepo;
+	
 	private final MemberRepository mRepository;
 	private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -55,7 +59,7 @@ public class AdminJoinService {
 	public void delete(String seq) {
 		seq = seq.replace("=", "");
     	Long seq2 = Long.parseLong(seq);
-		Srepo.deleteById(seq2);
+		Srepo.deleteById(seq2);		
 	}
 
 }

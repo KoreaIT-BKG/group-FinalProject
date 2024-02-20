@@ -25,6 +25,7 @@
   justify-content: space-between;
   min-width: 70vw; /* 변경된 부분 */
   min-height: 70vh; /* 변경된 부분 */
+  font-family: 'TheJamsil5Bold';
 }
 
 /* 왼쪽 테이블 컨테이너 스타일 */

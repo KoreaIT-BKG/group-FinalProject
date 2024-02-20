@@ -1,6 +1,5 @@
 // Calendar.jsx
 
-
 import React, { Component } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -13,8 +12,8 @@ import "../css/CalendarModal.css";
 import axios from "axios";
 import { LoginContext } from "../contexts/LoginContextProvider";
 import EventDetailModal from "./EventDetailModal";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCrown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCrown } from "@fortawesome/free-solid-svg-icons";
 
 class Calendar extends Component {
   static contextType = LoginContext; // 클래스 컴포넌트에서 contextType을 사용하여 context에 직접 액세스할 수 있게 합니다.
@@ -44,13 +43,13 @@ class Calendar extends Component {
     this.setState((prevState) => ({
       showData: !prevState.showData,
       showJoinData: false,
-
     }));
   };
 
   handleButtonClick2 = () => {
     // 버튼이 클릭될 때 상태를 토글
-    this.setState((prevState) => ({ // prevState 현재 state상태
+    this.setState((prevState) => ({
+      // prevState 현재 state상태
       showJoinData: !prevState.showJoinData, // showJoinData는 현재 showJoinData의 반대되는 값을 설정
       showData: false,
     }));
@@ -110,7 +109,6 @@ class Calendar extends Component {
         },
       },
       () => {
-
         console.log("Selected Event Data:", this.state.selectedEventData);
       }
     );
@@ -307,8 +305,20 @@ class Calendar extends Component {
                     <tr
                       key={index}
                       onClick={() => this.handleDetailClick(event)}
+                      style={{
+                        fontWeight:
+                          event.userId === event.membersId ? "bold" : "normal",
+                      }}
                     >
-                      <td>{event.meetingTitle}</td>
+                      <td>
+                        {event.userId === event.membersId && (
+                          <FontAwesomeIcon
+                            icon={faCrown}
+                            style={{ marginRight: "5px", color: "gold" }}
+                          />
+                        )}
+                        {event.meetingTitle}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -378,7 +388,7 @@ class Calendar extends Component {
             onClose={() => this.setState({ details: null })}
           />
         )}
-        <Footer/>
+        <Footer />
       </div>
     );
   }
