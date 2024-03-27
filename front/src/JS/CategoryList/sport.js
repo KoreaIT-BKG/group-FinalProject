@@ -13,7 +13,7 @@ const SportGroup = ({ print, searchValue }) => {
   const [selectedData, setSelectedData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // 한 페이지에 표시되는 항목 수
+  const itemsPerPage = 4; // 한 페이지에 표시되는 항목 수
   const handleSeq = (c) => {
     setSelectedData(c);
     setIsModalOpen(true);

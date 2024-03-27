@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCrown } from "@fortawesome/free-solid-svg-icons";
 
 class Calendar extends Component {
+  
   static contextType = LoginContext; // 클래스 컴포넌트에서 contextType을 사용하여 context에 직접 액세스할 수 있게 합니다.
   state = {
     showData: false, // 상태 추가: 데이터를 보일지 여부를 결정하는 상태
@@ -29,6 +30,7 @@ class Calendar extends Component {
     groupInfo: [],
     joinInfo: [],
     details: null,
+    today: new Date().toISOString().split("T")[0]
   };
 
   handleDetailClick = (event) => {
@@ -301,7 +303,7 @@ class Calendar extends Component {
                   <tr>
                     <th>내 모임 가입현황</th>
                   </tr>
-                  {this.state.joinInfo.map((event, index) => (
+                  {this.state.joinInfo.map((event, index, today) => (
                     <tr
                       key={index}
                       onClick={() => this.handleDetailClick(event)}
@@ -314,10 +316,12 @@ class Calendar extends Component {
                         {event.userId === event.membersId && (
                           <FontAwesomeIcon
                             icon={faCrown}
-                            style={{ marginRight: "5px", color: "gold" }}
+                            style={{ marginRight: "5px", color: "gold", 
+                                   }}
                           />
                         )}
-                        {event.meetingTitle}
+                         <span style={{ color:
+                                    event.meetingDateEnd < this.state.today? "red":"black"}}>{event.meetingTitle}</span>
                       </td>
                     </tr>
                   ))}

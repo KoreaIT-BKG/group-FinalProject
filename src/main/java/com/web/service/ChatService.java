@@ -36,7 +36,6 @@ public class ChatService {
 	
 	@OnMessage
 	public void onMessage(String message, Session session) throws IOException{
-		System.out.println("여기니?");
 		System.out.println(message);
 		
 		logger.info("receive message : {}", message);

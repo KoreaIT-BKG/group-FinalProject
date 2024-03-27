@@ -21,7 +21,7 @@ const Category = () => {
             <div className="CardStyle">
               <img className="CardStyle-img" src={`/Image/homecategory/${category.id}.jpg`} alt="Card" />
               <div>
-                <p className="CardStyle-p">아리따운 여성과 함께하실 남성분들 모집합니다</p>
+                <p className="CardStyle-p"></p>
                 <h4 className="CardStyle-h4">{category.title}</h4>
               </div>
             </div>

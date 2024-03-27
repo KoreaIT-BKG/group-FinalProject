@@ -68,7 +68,7 @@ const Payment = () => {
         pay_method: "phone",
         merchant_uid: `mid_${getRandomString()}_${new Date().getTime()}`,
         name: "모임비",
-        amount: "1",
+        amount: "5000",
         custom_data: {
           name: "부가정보",
           
@@ -84,7 +84,7 @@ const Payment = () => {
       data = {
         pg: "kakaopay.TC0ONETIME",
         merchant_uid: `mid_${getRandomString()}_${new Date().getTime()}`, // 상점에서 생성한 고유 주문번호
-        name: "주문명:결제테스트",
+        name: "모임비",
         amount: 5000,
         buyer_email: "test@portone.io",
         buyer_name: "구매자이름",
